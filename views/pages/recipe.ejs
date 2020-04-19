@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/style/base.css">
+    <title><%=dish.title%></title>
+</head>
+<body>
+    <header>
+        <form action="">
+            <button>X</button>
+          </form>
+    </header>
+    <main>
+        <article>
+            <img src="<%=dish.imgurl%>" alt="<%=dish.title%>" srcset="">
+            <h4><%=dish.title%></h4>
+            <div id="ing">
+            <div id="ingHeader">
+            <p>IngredientLines: </p> 
+            <p>Total time : <%=dish.totalTime%> </p>
+            </div>
+            <ul>
+            <!-- <p><%=dish.ingredientLines%></p> -->
+            <%dish.ingredientLines.forEach(ele=>{%>
+               <li><%=ele%></li>
+              <%})  %>
+              </ul>
+            </div>
+            <div id="nut">
+                <p>Nutrition Fact: <br> <%=dish.dietLabels%></p>
+                <p>Calories: <br> <%=dish.calories.toFixed(1)%> kcal</p>
+                <p>Carbs: <br><%= dish.totalNutrients.CHOCDF.quantity.toFixed(1)%> g</p>
+                <p>FAT: <br><%= dish.totalNutrients.FAT.quantity.toFixed(1)%> g</p>
+                <p>Protein: <br><%= dish.totalNutrients.PROCNT.quantity.toFixed(1)%> g</p>
+            </div>
+          </article>
+    </main>
+    
+</body>
+</html>
