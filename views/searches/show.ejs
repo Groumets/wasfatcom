@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <%- include('../layout/head')%>
+<body>
+  
+<%- include('../layout/header')%>
+
+</header>
+    <main id="main">
+            <% search.forEach(item => { %>
+                    <div id="div">
+                        <img id="img" src="<%= item.image %>">
+                        <h2 id="h2"><%= item.originalName %></h2>
+                        <h3 id="h3"><%= item.amount %></h3> 
+                    </div>
+            
+            <%  }) %>
+    
+    </main>
+    <%- include('../layout/footer')%>
+</body>
+
+</html>

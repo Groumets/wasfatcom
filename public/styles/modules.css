@@ -1,0 +1,43 @@
+/*index.ejs*/
+
+#background{
+    background-image: url("https://www.edamam.com/web-img/934/93417c9bc5c8a1a09a3ba430b0a05322.jpg");
+  
+  width: 100%;
+  background-size: cover;
+  height: 600px;
+  padding: 40px;
+  box-sizing: border-box;
+    
+}
+#box{
+    background-color: rgba(160, 146, 133, 0.562);
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    
+}
+#title{
+    padding-top: 10px;
+    text-align: center;
+}
+#ingre{
+    margin-top: 10px;
+    text-align: left;
+    margin-left: 5px;
+  
+}
+#ul{
+ margin-top: 5px;
+ 
+ 
+}
+.li{
+    margin-left: 40px;
+    list-style-type: circle;
+   padding-top: 5px;
+   text-align: left;
+}
+#nut{
+    display: block;
+}

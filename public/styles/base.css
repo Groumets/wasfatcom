@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  body {
+  width: 480px;
+    margin: 0 auto;
+      font-family: "Lato", sans-serif;
+  }
+  .sidepanel  {
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    height: 300px;
+    top: 0;
+    left: 0;
+    background-color: rgba(10, 10, 10, 0.356);
+    overflow: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+    font-size: 10px;
+    margin-left: 38px;
+    margin-top: 45px;
+  
+  }
+  
+  .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f5f1f1;
+    display: block;
+    transition: 0.8s; 
+   text-align: left;
+   font-size: 22px;
+   padding: 15px;
+  }
+  
+  .sidepanel a:hover {
+   
+    color: #f1f1f1;
+  }
+  
+  .sidepanel .closebtn {
+  text-align: center;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size:20px;
+  }
+  
+  .openbtn {
+  text-align: left;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgb(46, 45, 45);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    
+    width: 480px;
+    
+  }
+  
+  .openbtn:hover {
+    background-color:#444;
+  }

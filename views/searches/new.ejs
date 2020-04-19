@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../layout/head')%>
+
+<body>
+
+<%- include('../layout/header')%>
+</header>
+    <main id="main">
+        <h2 id="h2">Search by Name of product</h2>
+
+       <form id="form" action="/search" method="POST">
+            <div>
+                <input id="enterI" type="text" placeholder="Enter a name of product" name="product">
+                <button id="button" type="submit">Search </button>
+            </div>
+        </form>
+    </main>
+    
+   <%- include('../layout/footer')%>   
+</body>
+
+</html> 
