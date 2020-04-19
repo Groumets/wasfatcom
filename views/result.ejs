@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/reset.css">
+    <link rel="stylesheet" href="/base.css">
+    <link rel="stylesheet" href="/styles/modules.css">
+    <link rel="stylesheet" href="/styles/layout.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <header><h1>Search Results</h1></header>
+   <main>
+      <% search.forEach(result => { %>
+        <div id="resultdiv">
+           <img src=<%= result.imgurl %>>
+            <h2>Title:<%= result.title %></h2>
+            <h3>DietLabels:<%= result.dietLabels %></h3>
+            <h3>HealthLabels:<%= result.healthLabels %></h3>
+            <p>IngredientLines:<%= result.ingredientLines %></p>
+            <h3>Calories:<%= result.calories %></h3>
+            <h3>TotalTime:<%= result.totalTime %></h3>
+           
+            <button id="submitButton" type="submit">Select this recipe</button>
+        </div>
+    <%  }); %>
+
+</main> 
+</body>
+
+</html>
