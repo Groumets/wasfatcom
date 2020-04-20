@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/public/infoStyle/reset.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/infoStyle/base.css">
+  <link rel="stylesheet" href="/public/infoStyle/layout.css">
+  <link rel="stylesheet" href="/public/infoStyle/modules.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="list">
+        <i class="fa fa-bars menu" aria-hidden="true"></i>
+      </div>
+      <ul>
+        <li>
+          <a href="#">Home </a>
+        </li>
+        <li>
+          <a href="#">About us </a>
+        </li>
+        <li>
+          <a href="#">Books </a>
+        </li>
+        <li>
+          <a href="#">Contact </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="header">
+      <h2> Do You Want to Know Your BMI</h2>
+      <p> Here You Can Know It...</p>
+    </div>
+    <div class="paragraph">
+      <p>The BMI is a measure used to determine if you are a healthy weight for your height.<br>
+        It is calculated by dividing your weight in kilograms by your height in metres squared,<br>
+        to place you in a category of underweight, healthy weight, overweight or obese.</p>
+
+      <div class="form">
+        <h3> Here You Can Know<br>
+          Your BMI :</h3>
+        <form action="/test" method="POST">
+          <label>
+            <input type="number" placeholder="Enter Your Weight :" name="weight">
+          </label>
+          <label>
+            <input type="number" placeholder="Enter Your Height :" name="height" step="0.01" min="0" max="10">
+          </label>
+          <label class="imoji"> Women 👩🏻
+            <input type="radio" value="women" name="gender">
+
+          </label>
+          <label class="imoji"> man 🧑🏻
+            <input type="radio" value="man" name="gender">
+          </label>
+          <input type="submit" name="submit" value="Submit">
+
+        </form>
+
+
+
+
+      </div>
+  </main>
+
+
+  <footer>
+
+
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.js">
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $('.menu').click(function () {
+        $('ul').toggleClass('active')
+      })
+    }); 
+  </script>
+</body>
+
+</html>
