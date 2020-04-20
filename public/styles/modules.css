@@ -1,43 +1,55 @@
 /*index.ejs*/
+@import url('https://fonts.googleapis.com/css2?family=Balthazar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Skranji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&family=Skranji&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
 
-#background{
-    background-image: url("https://www.edamam.com/web-img/934/93417c9bc5c8a1a09a3ba430b0a05322.jpg");
-  
+/* main */
+main{
+  background-image: url("https://images.unsplash.com/photo-1477370795277-0c4a53692ce2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80");
   width: 100%;
   background-size: cover;
-  height: 600px;
-  padding: 40px;
+  height: 650px;
+  padding-top: 30px;
+  padding-left: 25px;
   box-sizing: border-box;
-    
 }
-#box{
-    background-color: rgba(160, 146, 133, 0.562);
-    width: 400px;
-    height: 450px;
-    border-radius: 10px;
-    
-}
-#title{
-    padding-top: 10px;
-    text-align: center;
-}
-#ingre{
+
+
+#h2{
+    font-family: 'Secular One', sans-serif;
     margin-top: 10px;
+    font-size: 25px;
     text-align: left;
     margin-left: 5px;
-  
+    color: #29363D;
+   
 }
-#ul{
- margin-top: 5px;
- 
- 
+#ourWebsite{
+    
+    padding:20px;
+    color:rgb(102, 79, 70)  ;
+    text-align: left;
+    font-family: 'Balthazar', serif;
+    font-size: 20px;
 }
-.li{
-    margin-left: 40px;
-    list-style-type: circle;
-   padding-top: 5px;
-   text-align: left;
+
+#bmi{
+    padding:20px;
+    text-align: left;
+    border-radius: 10px;
+    font-family: 'Balthazar', serif;
+    font-size: 18px;
+    color:#8a8476 ;
+
 }
-#nut{
-    display: block;
+.fa-facebook-f{
+
+ font-size: x-large;
+ color: blue;
+
+}
+.fa{
+  font-size: x-large;
+  color: blue;
 }

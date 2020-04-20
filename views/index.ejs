@@ -1,11 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-   <%- include('./layout/head')%> 
+
+ <head>
+  <%- include('./layout/head')%> 
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+   
+  
   <link rel="stylesheet" href="styles/modules.css">
+ </head>
+ 
+    
+
 <body>
+<center>
 <header>
   <div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
   <a href="/">Home</a>
   <a href="#">login</a>
   <a href="#">Search for recipe</a>
@@ -15,41 +27,24 @@
 </div>
 <button class="openbtn" onclick="openNav()"> ☰ &nbsp  Wasfatcom</button>  
 </header>
-    <main id="background">
-        <section id="box">
-          
-            <h4 id="title">An Ideal Lunch Salad</h4>
-            <p id="ingre"> Ingredient:</p> 
+    <main >
+        <section >
+        <h2 id="h2">About us:</h2>
+        <p id="ourWebsite"> Welcome to Wasfatcom!<br> We here are  to help you to don't overthink <br> what do you want to cook for today, It can give <br> you suggestions for today's dish in several ways <br> and take care of your health by giving you nutrition about your dish, you can choose the best and add it to your list and you have the ability to change according to your needs. Additionally, you can write your own recipe and save it. </p>
+         
       
-            <ul id="ul">
-            <li class="li">3 celery stalks, very thinly sliced</li>
-            <li class="li">1 cup chickpeas (equivalent 14-ounce can), drained/rinsed</li>
-            <li class="li">3 handfuls arugula or shredded romaine lettuce</li>
-            <li class="li">1/3 cup toasted pepitas or almonds</li>
-            <li class="li">15 black olives, chopped</li>
-            <li class="li">1/2 small red onion, finely diced</li>
-            <li class="li">1 small head of broccoli florets, blanched</li>
-            <li class="li">1 tablespoon white miso</li>
-            <li class="li">1 tablespoon mirin</li>
-            <li class="li">1 tablespoon brown rice vinegar</li>
-            <li class="li">big pinch of ground cumin</li>
-            <li class="li">1/3 cup/80 ml plain yogurt</li>
-            <li class="li">1-2 tablespoons heavy cream, or to taste</li>
-            <li class="li">1 small ripe avocado, sliced</li>
-            <div id="nut">
-            <ul id="ul1">
-                <li>Nutrition Fact: <br> Energy </li>
-                <li>Calories: <br> 1815.62014 kcal</li>
-                <li>Carbs: <br> 226.3404 g</li>
-                <li>FAT: <br> 116.03773 g</li>
-                <li>Protein: <br> 87.3279 g</li>
-            </ul>
-            </div>
             </section>
-          
+            <div>
+              
+           
+            <p id="bmi"> In addition to that you can know more about your health, <br> we provide for you to calculate your Body Mass Index (BMI).The BMI is a measure used to determine if you are a healthy weight for your height. It is calculated by dividing your weight in kilograms by your height in metres squared,  to place you in a category of underweight, healthy weight, overweight or obese.
+             </p>
+           </div>
     </main>
 
     <%- include('./layout/footer')%>
+    </center>
+    
 </body>
 
 </html>
