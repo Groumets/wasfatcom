@@ -3,43 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/reset.css">
-    <link rel="stylesheet" href="/base.css">
-    <link rel="stylesheet" href="/modules.css">
-    <link rel="stylesheet" href="/layout.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
      <header>
-         <!-- <h1>Search page</h1> -->
-         <div id="headerdiv">
-         <div class="text">
-            <span>S</span>
-            <span>E</span>
-            <span>A</span>
-            <span>R</span>
-            <span>C</span>
-            <span>H</span>
-            <span></span>
-            <span>P</span>
-            <span>A</span>
-            <span>G</span>
-            <span>E</span>
-          </div>
-        </div>
+        
      </header>
  <main> 
-     <form action="\search" method="POST" >
-         <label >
-             <span>Enter the recipe by keyword</span> 
-             <input id='searchForRecpie' type="search" name="SearchFor" placeholder="The name of dish "> 
-       
-    
-    <input class="button" type="submit" value="SEARCH">
-    </form>
- </main>
-<footer></footer>
+    <div id="slider">
+        <h1>Search Page</h1>
+        <figure>
+            <img src="img/foodPic1.jpg">
+            <img src="img/foodPic2.jpg">
+            <img src="img/ya4.jpg">
+            <img src="img/ya16.jpg">
+            <img src="img/foodPic1.jpg">
+        </figure>
+        </div>
+        <div class="paragraphSearch" >
+            <p> 
+                Are you hungry?:hamburger:<br>
+                Are you looking for special recipe with special ingredient?:mag:<br>
+                Here in our website you can find want are you searching for EASILY.. :fire:<br>
+                just type in the Searching box what ever you WANT 
+            </p>
+        </div>
 
-    
-</body>
-</html>
+        <div class="formSearch">
+            <form action="\search" method="POST" data-aos="flip-right">
+                <label >
+                   <h3> <span id="keyword">What Are You Looking For</span></h3></label>
+                    <input id='searchForRecpie' type="search" name="SearchFor" placeholder="The name of dish "> 
+           <input class="button" type="submit" value="SEARCH">
+           </form>
+        </div>
+            </main>
+            <footer>
+            </footer>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+              </script>
+        </body>
+        </html>
