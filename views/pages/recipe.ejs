@@ -35,6 +35,17 @@
                 <p>FAT: <br><%= dish.totalNutrients.FAT.quantity.toFixed(1)%> g</p>
                 <p>Protein: <br><%= dish.totalNutrients.PROCNT.quantity.toFixed(1)%> g</p>
             </div>
+            <%if(recipe !== null){%>
+            <div id="button">
+            <form action="/delete/<%=recipe.id%>?_method=DELETE" method="post">
+                <button>DELETE</button>
+              </form>
+              <form action="/update/<%=recipe.id%>?_method=update" method="post">
+                <button>update</button>
+              </form>
+            </div>
+            <%}%>
+
           </article>
     </main>
     

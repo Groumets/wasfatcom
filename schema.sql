@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS recipe;
-CREATE TABLE books (
+CREATE TABLE recipe (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   imgurl TEXT,
   dietLabels VARCHAR(255),
-  ingredientLines TEXT,
+  ingredientLines TEXT ARRAY,
   calories int,
   totalTime int,
   totalNutrients json,

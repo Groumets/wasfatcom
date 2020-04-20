@@ -2,6 +2,7 @@
 require('dotenv').config();
 const express = require('express');
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 const PORT = process.env.PORT || 4000;
 const app = express();
 const pg = require('pg');
@@ -10,10 +11,11 @@ const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', (err) => console.log(err));
 
 app.set('view engine','ejs');
+app.use(methodOverride('_method'));
 app.use('/public',express.static('public'));
 app.use(express.urlencoded({extended :true}));
 
-app.get('/recipe/:id', (req, res) => {
+app.post('/recipe/:id', (req, res) => {
   console.log('i\'am here',req.params.id);
   const shawirma = {title: 'Sweet chilli dogs',
   imgurl:
@@ -92,16 +94,30 @@ app.get('/recipe/:id', (req, res) => {
      VITK1:
       { label: 'Vitamin K', quantity: 12.96319999991124, unit: 'µg' },
      WATER: { label: 'Water', quantity: 395.18585999944196, unit: 'g' } } };
-  res.render('pages/recipe',{dish :shawirma});
-  const { title,authors,description, imageURL } = Book.all[req.params.id];
-  const SQL =
-    'INSERT INTO books (title,author,description, imageURL) VALUES ($1,$2,$3,$4);';
-  const values = [title,authors,description, imageURL];
+  // res.render('pages/recipe',{dish :shawirma});
+  const {title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients } = recipe[req.params.id];
+  const SQL ='INSERT INTO books (title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients) VALUES ($1,$2,$3,$4,$5,$6,$7);';
+  const values = [title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients];
   client
     .query(SQL, values)
     .then((results) => {
       console.log('stored');
-      res.render('pages/books/detail',{book :Book.all[req.params.id]});
+      res.render('pages/recipe',{dish:recipe[req.params.id]});
+    })
+    .catch((err) => {
+      errorHandler(err, req, res);
+    });
+});
+
+app.put('/recipe/:id', (req, res) => {
+  console.log('i\'am there',req.params.id);
+  const SQL = 'SELECT * FROM redipe WHERE id=$1;';
+  const values = [req.params.id+1];
+  client
+    .query(SQL, values)
+    .then((results) => {
+      console.log( results.rows[0]);
+      res.render('pages/recipe/recipe',{obj : results.rows[0]});
     })
     .catch((err) => {
       errorHandler(err, req, res);
@@ -109,8 +125,36 @@ app.get('/recipe/:id', (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));
+app.delete('/recipe/:id', (req, res) => {
+  console.log('i\'am at delete',req.params.id);
+  const SQL = 'DELETE FROM tasks WHERE id=$1';
+  const values = [req.params.id];
+  client
+    .query(SQL, values)
+    // edite this route
+    .then((results) => res.redirect('/'))
+    .catch((err) => errorHandler(err, req, res));
+});
 
-// client.connect().then(() => {
-//     app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));
-//   });
+app.get('/myRecipe', (req, res) => {
+  console.log('myrecoipe');
+  const SQL = 'SELECT * FROM recipe;';
+  client
+    .query(SQL)
+    .then((results) => {
+      console.log('in recipe db ');
+      console.log('data in recipe db',results.rows);
+      res.render('pages/myRecipe.ejs ',{recipes : results.rows});
+    })
+    .catch((err) => {
+      console.log(err);
+      errorHandler(err, req, res);
+    });
+
+});
+
+// app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));
+
+client.connect().then(() => {
+    app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));
+  });
