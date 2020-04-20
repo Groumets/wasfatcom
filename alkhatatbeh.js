@@ -1,6 +1,4 @@
-app.get('/', (req,res) =>{
-    res.render('index');
-  });
+
   app.get('/search/new',(req,res)=>{
     res.render('search');
   });
@@ -20,9 +18,9 @@ app.get('/', (req,res) =>{
           Recipesarr.push(recipes);
           console.log(Recipes.all[1]);
         });
-        //   if(recipes.title===$('searchForRecipe').val()){
+        
         res.render('result' , {search:Recipesarr});
-      //   }} );
+     ;
       });
   });
   
