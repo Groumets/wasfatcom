@@ -12,112 +12,52 @@ client.on('error', (err) => console.log(err));
 
 app.set('view engine','ejs');
 app.use(methodOverride('_method'));
-app.use('/public',express.static('public'));
+app.use('/public',express.static('./public'));
+// app.use(express.static('./public'));
 app.use(express.urlencoded({extended :true}));
 
 app.post('/recipe/:id', (req, res) => {
-  console.log('i\'am here',req.params.id);
-  const shawirma = {title: 'Sweet chilli dogs',
-  imgurl:
-   'https://www.edamam.com/web-img/66a/66af6842d220399ba64a71ee6b210a64.jpg',
-  dietLabels: [ 'Balanced' ],
-  healthLabels: [ 'Peanut-Free', 'Tree-Nut-Free', 'Alcohol-Free' ],
-  ingredientLines:
-   [ '4 fat sausage (sweet chilli if you can get them)',
-     '2 onion, red, white or one of each',
-     '4 tbsp sweet chilli sauce',
-     '2 tbsp tomato purée',
-     '4 hot dog bun' ],
-  calories: 878.1279999997464,
-  totalTime: 0,
-  totalNutrients:
-   { ENERC_KCAL:
-      { label: 'Energy', quantity: 878.1279999997464, unit: 'kcal' },
-     FAT: { label: 'Fat', quantity: 31.59131999999721, unit: 'g' },
-     FASAT:
-      { label: 'Saturated', quantity: 9.232909999999734, unit: 'g' },
-     FATRN: { label: 'Trans', quantity: 0.101, unit: 'g' },
-     FAMS:
-      { label: 'Monounsaturated',
-        quantity: 11.436391999999849,
-        unit: 'g' },
-     FAPU:
-      { label: 'Polyunsaturated',
-        quantity: 7.343136999998485,
-        unit: 'g' },
-     CHOCDF: { label: 'Carbs', quantity: 113.90610999994414, unit: 'g' },
-     FIBTG: { label: 'Fiber', quantity: 8.88009999999049, unit: 'g' },
-     SUGAR: { label: 'Sugars', quantity: 25.468699999966397, unit: 'g' },
-     PROCNT: { label: 'Protein', quantity: 35.86860999998814, unit: 'g' },
-     CHOLE: { label: 'Cholesterol', quantity: 70, unit: 'mg' },
-     NA:
-      { label: 'Sodium', quantity: 1646.1989999999428, unit: 'mg' },
-     CA:
-      { label: 'Calcium', quantity: 371.04599999991126, unit: 'mg' },
-     MG:
-      { label: 'Magnesium', quantity: 93.62499999985417, unit: 'mg' },
-     K:
-      { label: 'Potassium', quantity: 1089.3219999979585, unit: 'mg' },
-     FE: { label: 'Iron', quantity: 8.062849999993471, unit: 'mg' },
-     ZN: { label: 'Zinc', quantity: 4.043979999998351, unit: 'mg' },
-     P:
-      { label: 'Phosphorus', quantity: 410.47299999972734, unit: 'mg' },
-     VITA_RAE:
-      { label: 'Vitamin A', quantity: 48.12399999969568, unit: 'µg' },
-     VITC:
-      { label: 'Vitamin C', quantity: 77.18429999908892, unit: 'mg' },
-     THIA:
-      { label: 'Thiamin (B1)',
-        quantity: 1.4628599999995435,
-        unit: 'mg' },
-     RIBF:
-      { label: 'Riboflavin (B2)',
-        quantity: 0.6193579999994547,
-        unit: 'mg' },
-     NIA:
-      { label: 'Niacin (B3)', quantity: 14.49174799999211, unit: 'mg' },
-     VITB6A:
-      { label: 'Vitamin B6', quantity: 0.8246299999967918, unit: 'mg' },
-     FOLDFE:
-      { label: 'Folate equivalent (total)',
-        quantity: 349.0969999998541,
-        unit: 'µg' },
-     FOLFD:
-      { label: 'Folate (food)',
-        quantity: 103.81699999985418,
-        unit: 'µg' },
-     FOLAC: { label: 'Folic acid', quantity: 144.48, unit: 'µg' },
-     VITB12: { label: 'Vitamin B12', quantity: 1.256, unit: 'µg' },
-     VITD: { label: 'Vitamin D', quantity: 1.4, unit: 'µg' },
-     TOCPHA:
-      { label: 'Vitamin E', quantity: 1.7413499999956252, unit: 'mg' },
-     VITK1:
-      { label: 'Vitamin K', quantity: 12.96319999991124, unit: 'µg' },
-     WATER: { label: 'Water', quantity: 395.18585999944196, unit: 'g' } } };
-  // res.render('pages/recipe',{dish :shawirma});
-  const {title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients } = recipe[req.params.id];
-  const SQL ='INSERT INTO books (title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients) VALUES ($1,$2,$3,$4,$5,$6,$7);';
+  // console.log('i\'am here',req.params.id,Recipes.all[req.params.id]);
+  // res.send(Recipes.all[req.params.id]);
+  const {title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients } = Recipes.all[req.params.id];
+  const SQL ='INSERT INTO recipe (title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients) VALUES ($1,$2,$3,$4,$5,$6,$7);';
   const values = [title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients];
   client
     .query(SQL, values)
     .then((results) => {
       console.log('stored');
-      res.render('pages/recipe',{dish:recipe[req.params.id]});
+      res.render('pages/recipe/recipe',{dish:Recipes.all[req.params.id] , id:req.params.id});
     })
     .catch((err) => {
       errorHandler(err, req, res);
     });
 });
 
-app.put('/recipe/:id', (req, res) => {
+app.put('recipe/:id',(req, res)=>{
+  console.log(update,req.body);
+  const ing = req.body;
+  const SQL ='UPDATE tasks SET ing WHERE id=$2';
+  const values = [
+    title,
+    req.params.task_id
+  ];
+  client
+    .query(SQL, values)
+    .then((results) => res.redirect(`/myRecipe/${req.params.task_id}`))
+    .catch((err) => errorHandler(err, req, res));
+})
+
+
+
+app.post('/myRecipe/:id', (req, res) => {
   console.log('i\'am there',req.params.id);
-  const SQL = 'SELECT * FROM redipe WHERE id=$1;';
+  const SQL = 'SELECT * FROM recipe WHERE id=$1;';
   const values = [req.params.id+1];
   client
     .query(SQL, values)
     .then((results) => {
-      console.log( results.rows[0]);
-      res.render('pages/recipe/recipe',{obj : results.rows[0]});
+      console.log('myrecipe', results.rows[0].ingredientlines);
+      res.render('pages/recipe/recipe',{dish : results.rows[0],id:req.params.id+1});
     })
     .catch((err) => {
       errorHandler(err, req, res);
@@ -127,12 +67,12 @@ app.put('/recipe/:id', (req, res) => {
 
 app.delete('/recipe/:id', (req, res) => {
   console.log('i\'am at delete',req.params.id);
-  const SQL = 'DELETE FROM tasks WHERE id=$1';
+  const SQL = 'DELETE FROM recipe WHERE id=$1';
   const values = [req.params.id];
   client
     .query(SQL, values)
     // edite this route
-    .then((results) => res.redirect('/'))
+    .then((results) => res.render('pages/recipe/myRecipe.ejs'))
     .catch((err) => errorHandler(err, req, res));
 });
 
@@ -143,8 +83,10 @@ app.get('/myRecipe', (req, res) => {
     .query(SQL)
     .then((results) => {
       console.log('in recipe db ');
-      console.log('data in recipe db',results.rows);
-      res.render('pages/myRecipe.ejs ',{recipes : results.rows});
+      // console.log('data in recipe db',results.rows);
+      // res.render('result' , {search:results.rows});
+
+      res.render('pages/recipe/myRecipe',{search : results.rows});
     })
     .catch((err) => {
       console.log(err);
@@ -153,7 +95,54 @@ app.get('/myRecipe', (req, res) => {
 
 });
 
+
+
+// abd coode heloo
+app.get('/search/new',(req,res)=>{
+  res.render('search');
+});
+
+
+app.post('/search', (req, res) => {
+  let Recipesarr = [];
+  let url;
+  url=`https://api.edamam.com/search?q=${req.body.SearchFor}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`;
+
+  superagent.get(url)
+    .then(data =>{
+
+      data.body.hits.map( element =>{
+
+        const recipes= new Recipes(element.recipe);
+        Recipesarr.push(recipes);
+        // console.log(Recipes.all[1]);
+      });
+      
+      res.render('result' , {search:Recipesarr});
+   ;
+    });
+});
+
+
+function Recipes(details){
+  this.title=details.label ? details.label : 'undifed' ;
+  this.imgurl=details.image ? details.image : 'undifed';
+  this.dietLabels=details.dietLabels ? details.dietLabels : 'undifed';
+  this.healthLabels=details.healthLabels ? details.healthLabels : 'undifed';
+  this.ingredientLines=details.ingredientLines ? details.ingredientLines : 'undifed';
+  this.calories=details.calories ? details.calories : 'undifed';
+  this.totalTime=details.totalTime ? details.totalTime : 'undifed';
+  this.totalNutrients=details.totalNutrients ? details.totalNutrients : 'undifed';
+
+  Recipes.all.push(this);
+}
+Recipes.all = [];
 // app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));
+
+function errorHandler(err, req, res){
+  console.log(err);
+};
+
 
 client.connect().then(() => {
     app.listen(PORT, () => console.log(`I'm running at port ${PORT}`));

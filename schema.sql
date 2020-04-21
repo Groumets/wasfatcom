@@ -5,8 +5,8 @@ CREATE TABLE recipe (
   imgurl TEXT,
   dietLabels VARCHAR(255),
   ingredientLines TEXT ARRAY,
-  calories int,
-  totalTime int,
+  calories VARCHAR(255),
+  totalTime VARCHAR(255),
   totalNutrients json,
   due DATE NOT NULL DEFAULT NOW()
 )
