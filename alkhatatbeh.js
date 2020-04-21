@@ -1,14 +1,17 @@
 'use strict';
 
+// const client = require('./client');
+const handler = require('./handler');
 
+// server
+  // app.get('/search/new',(req,res)=>{
+  //   res.render('search');
+  // });
 
-
-  app.get('/search/new',(req,res)=>{
-    res.render('search');
-  });
+  // app.post('/search', searchRrcipe);
   
   
-  app.post('/search', (req, res) => {
+ function searchRrcipe (req, res)  {
     let Recipesarr = [];
     let url;
     url=`https://api.edamam.com/search?q=${req.body.SearchFor}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`;
@@ -24,9 +27,11 @@
         });
         
         res.render('result' , {search:Recipesarr});
-     ;
-      });
-  });
+     
+      })
+      
+      // .catch((error) => handler.errorHandler(error, request, response));
+  };
   
   
   function Recipes(details){
@@ -42,3 +47,5 @@
     Recipes.all.push(this);
   }
   Recipes.all = [];
+
+  module.exports = searchRrcipe ;

@@ -1,7 +1,8 @@
 body{
     width: auto;
    
-    
+    /* background-image: url("recipe\ background.jpg"); */
+    /* background: no-repeat; */
     height: 600px;
     
 
@@ -12,7 +13,7 @@ body{
 }
 form{
     text-align: center;
-    
+    /* display:inline-block; */
     margin-top: 120px;
 }
 #keyword{
@@ -46,7 +47,7 @@ text-align: center;
     padding: 10px;
 color: #fff;
 text-align: center;
-font-size: 17px;
+font-size: 18px;
 border-radius: 20px;
 background: none;
 
@@ -57,11 +58,12 @@ margin-right: 56px;
 margin-top: 5px;
 }
 .resultimg img{
-    width: 120px;
+    width: 143px;
 margin: 10px;
 border-radius: 20px;
-
+/* margin: 10px 5px; */
 padding: 10px;
+height: 140px;
 
 }
 .resultimg{
@@ -71,36 +73,37 @@ padding: 10px;
 #resultdiv{
 background-color: black;
 margin: 15px;
-height: 183px;
+height: 212px;
 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-
+/* padding: 80px 40px; */
+/* margin-top: 20%; */
 background: linear-gradient(top, #3c3c3c 0% #222222 100%);
 background: -webkit-linear-gradient(top, #3c3c3c 0% #222222 100%);
-
+/* margin-bottom: 20%; */
 opacity: .8;
 background-color: gray;
 width: 466px;
     margin:15px auto ;
 } 
 #submitButton {
-    height: 45px;
-    color: #ff9800;
-    background-color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 62%;
-    font-size: 18px;
-    border: 2px #fff solid;
-    margin-left: 10px;
-    position: relative;
-        bottom: 100px;
-    }
-    
-    #submitButton:hover{
-    color: #fff;
-    background-color: #dea846;
-    box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-    }
+height: 45px;
+color: #ff9800;
+background-color: #fff;
+border-radius: 20px;
+cursor: pointer;
+width: 62%;
+font-size: 18px;
+border: 2px #fff solid;
+margin-left: 10px;
+position: relative;
+    bottom: 100px;
+}
+
+#submitButton:hover{
+color: #fff;
+background-color: #dea846;
+box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
+}
 .h2button{
 padding: 10px;
 text-align: center;
@@ -121,7 +124,8 @@ justify-content: center
     body{
         width: auto;
        
-        
+        /* background-image: url("recipe\ background.jpg"); */
+        /* background: no-repeat; */
         height: 600px;
     
     
@@ -132,7 +136,7 @@ justify-content: center
     }
     form{
         text-align: center;
-     
+        /* display:inline-block; */
         margin-top: 120px;
     }
     #keyword{
@@ -165,7 +169,7 @@ justify-content: center
         padding: 10px;
     color: #fff;
     text-align: center;
-    font-size: 17px;
+    font-size: 18px;
     border-radius: 20px;
     background: none;
     
@@ -176,12 +180,12 @@ justify-content: center
     margin-top: 5px;
     }
     .resultimg img{
-        width: 120px;
+        width: 143px;
     margin: 10px;
     border-radius: 20px;
-    
+    /* margin: 10px 5px; */
     padding: 10px;
-
+    height: 140px;
     }
     .resultimg{
         float: left;
@@ -190,12 +194,13 @@ justify-content: center
 #resultdiv{
     background-color: black;
     margin: 15px;
-    height: 183px;
+    height: 212px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-    
+    /* padding: 80px 40px; */
+    /* margin-top: 20%; */
     background: linear-gradient(top, #3c3c3c 0% #222222 100%);
     background: -webkit-linear-gradient(top, #3c3c3c 0% #222222 100%);
-    
+    /* margin-bottom: 20%; */
     opacity: .8;
     background-color: gray;
 }
@@ -210,14 +215,14 @@ justify-content: center
     border: 2px #fff solid;
     margin-left: 10px;
     position: relative;
-        bottom: 100px;
-    }
-    
-    #submitButton:hover{
+    bottom: 100px;
+}
+
+#submitButton:hover{
     color: #fff;
     background-color: #dea846;
     box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-    }
+}
 .h2button{
     padding: 10px;
     text-align: center;
@@ -225,6 +230,7 @@ justify-content: center
     grid-column: 2 fr;
     justify-content: center
 }
+
 
 
 }
