@@ -82,23 +82,25 @@ background-color: gray;
 width: 466px;
     margin:15px auto ;
 } 
-button {
-height: 45px;
-color: #ff9800;
-background-color: #fff;
-border-radius: 20px;
-cursor: pointer;
-width: 62%;
-font-size: 18px;
-border: 2px #fff solid;
-margin-left: 10px
-}
-
-button:hover{
-color: #fff;
-background-color: #dea846;
-box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-}
+#submitButton {
+    height: 45px;
+    color: #ff9800;
+    background-color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 62%;
+    font-size: 18px;
+    border: 2px #fff solid;
+    margin-left: 10px;
+    position: relative;
+        bottom: 100px;
+    }
+    
+    #submitButton:hover{
+    color: #fff;
+    background-color: #dea846;
+    box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
+    }
 .h2button{
 padding: 10px;
 text-align: center;
@@ -197,7 +199,7 @@ justify-content: center
     opacity: .8;
     background-color: gray;
 }
-button {
+#submitButton {
     height: 45px;
     color: #ff9800;
     background-color: #fff;
@@ -206,14 +208,16 @@ button {
     width: 62%;
     font-size: 18px;
     border: 2px #fff solid;
-    margin-left: 10px
-}
-
-button:hover{
+    margin-left: 10px;
+    position: relative;
+        bottom: 100px;
+    }
+    
+    #submitButton:hover{
     color: #fff;
     background-color: #dea846;
     box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-}
+    }
 .h2button{
     padding: 10px;
     text-align: center;

@@ -18,14 +18,19 @@
     <h1>Search Results</h1>
 </div>
     <!-- $('searchForRecpie').val -->
-      <% search.forEach(result => { %>
+
+       <% search.forEach((result,index) => { %>
         <div id="resultdiv"  data-aos="fade-right"  >
 
            <div class="resultimg"><img src=<%= result.imgurl %>></div>
            <div class="h2button">
             <h2>Title:<%= result.title %></h2>
            
-            <button id="submitButton" type="submit">Add to my list</button>
+            <!-- <button id="submitButton" type="submit">Add to my list</button> -->
+            <form action="\recipe\<%=index%>" method="POST"  >
+              <label >
+         <input class="button" type="submit" value="Add to my list" id="submitButton">
+         </form>
         </div>
         </div>
     <%  }); %>

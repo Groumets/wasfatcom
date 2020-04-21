@@ -1,3 +1,7 @@
+'use strict';
+
+
+
 
   app.get('/search/new',(req,res)=>{
     res.render('search');
