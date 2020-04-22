@@ -150,7 +150,7 @@ input[type=text] , input[type=password]{
     text-align: center;
     font-weight: bold;
 }
-input[type=submit] {
+input[type=button] {
     height: 45px;
     color: #ff9800;
     background-color: #fff;
@@ -161,7 +161,7 @@ input[type=submit] {
     border: 2px #fff solid;
 }
 
-input[type=submit]:hover{
+input[type=button]:hover{
     color: #fff;
     background-color: #dea846;
     box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;

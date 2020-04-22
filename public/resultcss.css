@@ -1,230 +1,90 @@
 body{
-    width: auto;
-   
-    
-    height: 600px;
-    
+    width: 100%;
+}
+.header img{
+    width: 100%;
+}
 
-}
-#headerdiv{
-    text-align: center;
-
-}
-form{
-    text-align: center;
-    
-    margin-top: 120px;
-}
-#keyword{
-    text-align: center;
-    margin: 15px;
+div#result {
+    display: flex;
+    flex-direction: column;
     
 }
-#searchForRecpie{
-    margin: 15px;
-}
-.header{
-    overflow: hidden;
-    background: url(img/abdullah.jpg);
-    height: 260px;
-margin-bottom: 5%;
-background-size: cover;
-}
-.header h1 {
-    position: absolute;
-    left: 35%;
-    top: 14%;
-color: white;
-font-weight: bolder;
-font-size: 38px;
-background-color: gray;
-border-radius: 20px;
-width: 277px;
-text-align: center;
-}
-#resultdiv h2{
-    padding: 10px;
-color: #fff;
-text-align: center;
-font-size: 17px;
-border-radius: 20px;
-background: none;
 
-width: 120px;
-float: right;
-margin-bottom: 25px;
-margin-right: 56px;
-margin-top: 5px;
-}
-.resultimg img{
-    width: 120px;
-margin: 10px;
-border-radius: 20px;
 
-padding: 10px;
-
-}
-.resultimg{
-    float: left;
-    width: 50%;
-}
-#resultdiv{
-background-color: black;
-margin: 15px;
-height: 183px;
+.resultdiv{
+width: 90%;
+background: #c5872a;
+border-radius: 10px;
+display: flex;
+align-content: space-around;
+margin: 20px auto;
 box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-
-background: linear-gradient(top, #3c3c3c 0% #222222 100%);
-background: -webkit-linear-gradient(top, #3c3c3c 0% #222222 100%);
-
-opacity: .8;
-background-color: gray;
-width: 466px;
-    margin:15px auto ;
-} 
-#submitButton {
-    height: 45px;
-    color: #ff9800;
-    background-color: #fff;
-    border-radius: 20px;
-    cursor: pointer;
-    width: 62%;
-    font-size: 18px;
-    border: 2px #fff solid;
-    margin-left: 10px;
-    position: relative;
-        bottom: 100px;
-    }
-    
-    #submitButton:hover{
-    color: #fff;
-    background-color: #dea846;
-    box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-    }
-.h2button{
-padding: 10px;
-text-align: center;
-display: grid;
-grid-column: 2 fr;
-justify-content: center
 }
 
+.h2button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-flow: wrap;
+    /* float: right; */
+    justify-content: center;
+}
 
-
-
-
-
-
-
-@media(max-width : 746px){
-
-    body{
-        width: auto;
-       
-        
-        height: 600px;
-    
-    
-    }
-    #headerdiv{
-        text-align: center;
-
-    }
-    form{
-        text-align: center;
-     
-        margin-top: 120px;
-    }
-    #keyword{
-        text-align: center;
-        margin: 15px;
-        
-    }
-    #searchForRecpie{
-        margin: 15px;
-    }
-    .header{
-        overflow: hidden;
-        background: url(img/abdullah.jpg);
-        height: 260px;
-    margin-bottom: 10%;
-    }
-    .header h1 {
-        position: absolute;
-    left: 18%;
-    top: 18%;
+ 
+h2 {
+    width: 100%;
+    text-align: center;
     color: white;
-    font-weight: bolder;
-    font-size: 38px;
-    background-color: gray;
-    border-radius: 20px;
-    width: 277px;
-    text-align: center;
-    }
-    #resultdiv h2{
-        padding: 10px;
-    color: #fff;
-    text-align: center;
-    font-size: 17px;
-    border-radius: 20px;
-    background: none;
+    font-size: 25px;
+    font-weight: bold;
+  
+
+}
+
+.header h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        height: 100px;
+        line-height: 100px;
+        color: #c5872a;
+        background: #eff2f1;
+        top: -277px;
+        background: #eff2f19e;
+        position: relative;
+
     
-    width: 120px;
-    float: right;
-    margin-bottom: 25px;
-    margin-right: 56px;
-    margin-top: 5px;
-    }
-    .resultimg img{
-        width: 120px;
+}
+.resultdiv img{
+    width: 37vw;
     margin: 10px;
-    border-radius: 20px;
-    
-    padding: 10px;
-
-    }
-    .resultimg{
-        float: left;
-        width: 50%;
-    }
-#resultdiv{
-    background-color: black;
-    margin: 15px;
-    height: 183px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
-    
-    background: linear-gradient(top, #3c3c3c 0% #222222 100%);
-    background: -webkit-linear-gradient(top, #3c3c3c 0% #222222 100%);
-    
-    opacity: .8;
-    background-color: gray;
+    border-radius: 50px;
 }
-#submitButton {
-    height: 45px;
-    color: #ff9800;
-    background-color: #fff;
-    border-radius: 20px;
+input[type=submit] {
+    background-color: #fffefd;
+    border-radius: 8px;
     cursor: pointer;
-    width: 62%;
+    width: 125%;
     font-size: 18px;
-    border: 2px #fff solid;
-    margin-left: 10px;
-    position: relative;
-        bottom: 100px;
-    }
-    
-    #submitButton:hover{
-    color: #fff;
-    background-color: #dea846;
-    box-shadow: 0 0 10px #dea846, 0 0 40px #dea846, 0 0 80px #dea846;
-    }
-.h2button{
-    padding: 10px;
-    text-align: center;
-    display: grid;
-    grid-column: 2 fr;
-    justify-content: center
+    height: 45px;
+    color: #c5872a;
 }
 
+input[type=submit]:hover{
+    color: #fff;
+    background-color: #6fafb8;
+    box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
+}
+#contact{
+    color: white;
+}
+.about{
+    color: white;
+}
+@media(max-width:320px){
+    body{
+        width: 64.5vh;
 
+    }
 }

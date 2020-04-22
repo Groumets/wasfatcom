@@ -36,9 +36,9 @@ app.post('/recipe/:id', (req, res) => {
 app.post('/update/:id',(req, res)=>{
   console.log('update',req.body.ingredientlines.split(','));
   // console.log('update2',req.body);
-  const ing = req.body;
+  // const ing = req.body;
   const SQL ='UPDATE recipe SET ingredientlines=$1 WHERE id=$2';
-  const values = [
+   const values = [
     req.body.ingredientlines.split(','),
     req.params.id
   ];
@@ -87,7 +87,7 @@ app.get('/myRecipe', (req, res) => {
       // console.log('data in recipe db',results.rows);
       // res.render('result' , {search:results.rows});
 
-      res.render('pages/recipe/myRecipe',{search : results.rows});
+      res.render('myRecipe',{search : results.rows});
     })
     .catch((err) => {
       console.log(err);
@@ -106,6 +106,7 @@ app.get('/search/new',(req,res)=>{
 
 app.post('/search', (req, res) => {
   let Recipesarr = [];
+  Recipes.all=[];
   let url;
   url=`https://api.edamam.com/search?q=${req.body.SearchFor}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`;
 

@@ -255,7 +255,7 @@ footer{
     font-size: 30px;
     color: #fff;
 }
-input[type=submit] {
+input[type=button] {
     height: 45px;
     color: #000000;
     background-color: #fffefd;
@@ -265,11 +265,12 @@ input[type=submit] {
     font-size: 18px;
 }
 
-input[type=submit]:hover{
+input[type=button]:hover{
     color: #fff;
     background-color: #6fafb8;
     box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
 }
+
 }
 
 @media (width:411px){
@@ -277,5 +278,10 @@ input[type=submit]:hover{
         height: 740px;
 
     }
+}
+
+#header1{
+    position: fixed;
+    z-index: 10 ;
 }
 

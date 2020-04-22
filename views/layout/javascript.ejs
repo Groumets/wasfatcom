@@ -9,5 +9,11 @@
         $('.menu').click(function () {
             $('ul').toggleClass('active')
         })
+
+        $('#selectForm').hide();
+      $('#selectBtn').on('click', function () {
+        $('#selectForm').toggle();
+        $('#sectionHide').hide();
+      })
     }); 
 </script>
