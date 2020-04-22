@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./layout/head')%>
+  <link rel="stylesheet" href="/public/infoStyle/base.css">
+  <title>BMI</title>
+</head>
+
+<body>
+  <header>
+    <%- include('./layout/header')%>
+  </header>
+
+  <main>
+    <div class="header">
+      <h2> Do You Want to Know Your BMI</h2>
+      <p> Here You Can Know It...</p>
+    </div>
+    <div class="paragraph">
+      <p>The BMI is a measure used to determine if you are a healthy weight for your height.<br>
+        It is calculated by dividing your weight in kilograms by your height in metres squared,<br>
+        to place you in a category of underweight, healthy weight, overweight or obese.</p>
+
+      <div class="form">
+        <h3> Here You Can Know<br>
+          Your BMI :</h3>
+        <form action="/test" method="POST">
+          <label>
+            <input type="number" placeholder="Enter Your Weight :" name="weight">
+          </label>
+          <label>
+            <input type="number" placeholder="Enter Your Height :" name="height" step="0.01" min="0" max="10">
+          </label>
+          <label class="imoji"> 👩🏻
+            <input type="radio" value="women" name="gender" class="radio">
+
+          </label>
+          <label class="imoji"> 🧑🏻
+            <input type="radio" value="man" name="gender" class="radio">
+          </label>
+          <input type="submit" name="submit" value="Submit" id="submit">
+
+        </form>
+
+      </div>
+
+
+  </main>
+
+
+  <footer>
+    <%- include('./layout/footer')%>
+  </footer>
+
+  <%- include('./layout/javascript')%>
+</body>
+
+</html>

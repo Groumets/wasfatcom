@@ -1,0 +1,41 @@
+.table img{
+    width: 100%;
+    margin: auto;
+}
+h2{
+    margin: auto;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 4%;
+    font-weight: bold;
+}
+.render{
+    text-align: center;
+    margin-top: 4%;
+    font-size: 25px;
+    margin-bottom: 7%;
+}
+.render p{
+    padding: 10px;
+}
+.table{
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+
+}
+.paragraph{
+    text-align: center;
+    font-size: 25px;
+    width: 80%;
+    margin: 4% auto;
+}
+.paragraph p{
+    padding: 10px;
+    line-height: 125%;
+}
+.paragraph h4{
+    font-weight: bold;
+    font-size: 30px;
+    margin: 40px;
+}
