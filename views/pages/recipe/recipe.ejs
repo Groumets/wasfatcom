@@ -37,7 +37,7 @@
             </div>
             
             <div id="button">
-            <form action="/delete/<%=id%>?_method=DELETE" method="post">
+            <form action="/delete/<%=id%>" method="post">
                 <button>DELETE</button>
               </form>
               <form action="/update/<%=id%>?_method=update" method="post">
@@ -58,10 +58,10 @@
             <p>IngredientLines: </p> 
             <p>Total time : <%=dish.totalTime%> </p>
             </div>
-            <form action="/recipe/<%id%>?_method=PUT>" method="POST">
+            <form action="/update/<%=id%>" method="POST">
               <fieldset>
                 <textarea
-                name="ingredient"
+                name="ingredientlines"
                 placeholder="ingreadiant detials"
                 cols="50"
                 row="60"

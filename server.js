@@ -19,9 +19,9 @@ app.use(express.urlencoded({extended :true}));
 app.post('/recipe/:id', (req, res) => {
   // console.log('i\'am here',req.params.id,Recipes.all[req.params.id]);
   // res.send(Recipes.all[req.params.id]);
-  const {title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients } = Recipes.all[req.params.id];
+  const {title,imgurl,dietlabels,ingredientlines,calories,totaltime,totalnutrients } = Recipes.all[req.params.id];
   const SQL ='INSERT INTO recipe (title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients) VALUES ($1,$2,$3,$4,$5,$6,$7);';
-  const values = [title,imgurl,dietLabels,ingredientLines,calories,totalTime,totalNutrients];
+  const values = [title,imgurl,dietlabels,ingredientlines,calories,totaltime,totalnutrients];
   client
     .query(SQL, values)
     .then((results) => {
@@ -33,31 +33,32 @@ app.post('/recipe/:id', (req, res) => {
     });
 });
 
-app.put('recipe/:id',(req, res)=>{
-  console.log(update,req.body);
+app.post('/update/:id',(req, res)=>{
+  console.log('update',req.body.ingredientlines.split(','));
+  // console.log('update2',req.body);
   const ing = req.body;
-  const SQL ='UPDATE tasks SET ing WHERE id=$2';
+  const SQL ='UPDATE recipe SET ingredientlines=$1 WHERE id=$2';
   const values = [
-    title,
-    req.params.task_id
+    req.body.ingredientlines.split(','),
+    req.params.id
   ];
   client
     .query(SQL, values)
-    .then((results) => res.redirect(`/myRecipe/${req.params.task_id}`))
+    .then((results) => res.redirect(`/myRecipe/${Number(req.params.id)}`))
     .catch((err) => errorHandler(err, req, res));
 })
 
 
 
-app.post('/myRecipe/:id', (req, res) => {
-  console.log('i\'am there',req.params.id);
+app.get('/myRecipe/:id', (req, res) => {
+  console.log('i\'am there',Number(req.params.id));
   const SQL = 'SELECT * FROM recipe WHERE id=$1;';
-  const values = [req.params.id+1];
+  const values = [Number(req.params.id)];
   client
     .query(SQL, values)
     .then((results) => {
-      console.log('myrecipe', results.rows[0].ingredientlines);
-      res.render('pages/recipe/recipe',{dish : results.rows[0],id:req.params.id+1});
+      console.log('myrecipe',results.rows[0].title);
+      res.render('pages/recipe/recipe',{dish : results.rows[0],id:Number(req.params.id)});
     })
     .catch((err) => {
       errorHandler(err, req, res);
@@ -65,14 +66,14 @@ app.post('/myRecipe/:id', (req, res) => {
 });
 
 
-app.delete('/recipe/:id', (req, res) => {
+app.post('/delete/:id', (req, res) => {
   console.log('i\'am at delete',req.params.id);
   const SQL = 'DELETE FROM recipe WHERE id=$1';
-  const values = [req.params.id];
+  const values = [Number(req.params.id)];
   client
     .query(SQL, values)
     // edite this route
-    .then((results) => res.render('pages/recipe/myRecipe.ejs'))
+    .then((results) => res.redirect('/myRecipe'))
     .catch((err) => errorHandler(err, req, res));
 });
 
@@ -82,7 +83,7 @@ app.get('/myRecipe', (req, res) => {
   client
     .query(SQL)
     .then((results) => {
-      console.log('in recipe db ');
+      console.log('in recipe db ',results.rows);
       // console.log('data in recipe db',results.rows);
       // res.render('result' , {search:results.rows});
 
@@ -127,12 +128,12 @@ app.post('/search', (req, res) => {
 function Recipes(details){
   this.title=details.label ? details.label : 'undifed' ;
   this.imgurl=details.image ? details.image : 'undifed';
-  this.dietLabels=details.dietLabels ? details.dietLabels : 'undifed';
-  this.healthLabels=details.healthLabels ? details.healthLabels : 'undifed';
-  this.ingredientLines=details.ingredientLines ? details.ingredientLines : 'undifed';
+  this.dietlabels=details.dietLabels ? details.dietLabels : 'undifed';
+  this.healthlabels=details.healthLabels ? details.healthLabels : 'undifed';
+  this.ingredientlines=details.ingredientLines ? details.ingredientLines : 'undifed';
   this.calories=details.calories ? details.calories : 'undifed';
-  this.totalTime=details.totalTime ? details.totalTime : 'undifed';
-  this.totalNutrients=details.totalNutrients ? details.totalNutrients : 'undifed';
+  this.totaltime=details.totalTime ? details.totalTime : 'undifed';
+  this.totalnutrients=details.totalNutrients ? details.totalNutrients : 'undifed';
 
   Recipes.all.push(this);
 }
