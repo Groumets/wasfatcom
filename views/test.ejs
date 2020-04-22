@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./layout/head')%>
+    <link rel="stylesheet" href="/public/testStyle/base.css">
+    <title>Result</title>
+</head>
+
+<body>
+  
+        <%- include('./layout/header')%>
+    <main>
+        <img src="/public/img/form11.jpg" class="mainImg">
+        <h2> Here Is Your Result : </h2>
+
+
+        <div id="popup">
+            <section class="render"  data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
+                <p>Your status is : <%=obj.status%></p>
+                <p> Your Result = <%=obj.result%></p>
+                <p> And here is the ideal weight :</p>
+                <p>For Woman : <%=obj.ideal_weight.woman%> , And For Man : <%=obj.ideal_weight.man%></p>
+            </section>
+            <div class="table">
+                <img src="/public/img/table3.PNG">
+            </div>
+            <div class="paragraph">
+                <h4>What are the BMI trends for adults in the United States?</h4>
+                <p>
+                    The prevalence of adult BMI greater than or equal to 30 kg/m2<br>
+                    (obese status) has greatly increased since the 1970s. Recently,<br>
+                    however, this trend has leveled off, except for older women. <br>
+                    Obesity has continued to increase in adult women who are age 60 years and older.
+                </p>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <%- include('./layout/footer')%>
+    </footer>
+    <%- include('./layout/javascript')%>
+</body>
+
+</html>

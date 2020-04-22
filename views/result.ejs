@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./layout/head')%>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/public/resultcss.css">
+   
+    <title>Document</title>
+
+</head>
+<body>
+    <header>
+      <%- include('./layout/header')%>
+    </header>
+   <main>
+       <div class="header">
+         <img src="/public/img/form5.jpg">
+    <h2>Search Results</h2>
+</div>
+    <!-- $('searchForRecpie').val -->
+        <div id="result">
+       <% search.forEach((result,index) => { %>
+        <div class="resultdiv"  data-aos="fade-right"  >
+
+           <div class="resultimg"><img src=<%= result.imgurl %>></div>
+           <div class="h2button">
+            <h2><%= result.title %></h2>
+           
+            <!-- <button id="submitButton" type="submit">Add to my list</button> -->
+            <form action="\recipe\<%=index%>" method="POST"  >
+              <label >
+         <input class="button" type="submit" value="Add to my list" id="submitButton">
+         </form>
+        </div>
+        </div>
+    <%  }); %>
+  </div>
+
+</main> 
+
+<footer>
+  <%- include('./layout/footer')%>
+</footer>
+<%- include('./layout/javascript')%>
+
+</body>
+
+</html>

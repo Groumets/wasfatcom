@@ -1,0 +1,194 @@
+body{
+    background-color: #c5872a;
+}
+
+#slider{
+overflow: hidden;
+width: auto;
+}
+h2{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    height: 100px;
+    line-height: 100px;
+    color: #c5872a;
+    background: #eff2f1;
+
+}
+#slider figure{
+position: relative;
+width: 500% ;
+margin: 0;
+left: 0;
+animation: 20s slider infinite;
+z-index: -1;
+}
+#slider figure img{
+width: 20%;
+float: left;
+}
+
+@keyframes slider{
+0%{
+left: 0;
+}
+20%{
+left: 0;
+}
+25%{
+left: -100%;
+}
+45%{
+left: -100%;
+}
+50%{
+left: -200%;
+}
+70%{
+left: -200%;
+}
+75%{
+left: -300%;
+}
+95%{
+left: -300%;
+}
+100%{
+left: -400%;
+}
+}  
+.paragraphSearch{
+    height: auto;
+    background-color: #eff2f1;
+    margin: auto;
+}
+.paragraphSearch p{
+background-color: #eff2f1;
+font-size: 25px;
+text-align: center;
+letter-spacing: 0.15em;
+font-weight: bolder;
+color: #c5872a;
+padding: 35px;
+
+}
+
+
+.formSearch{
+margin: auto;
+/* width: auto; */
+padding: 80px 40px;
+background-color: #eff2f1;
+}
+form{
+background: none;
+background-color: #c5872a;
+box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
+border-radius: 20px;
+/* width: auto; */
+margin: auto 22px;
+
+ 
+
+}
+h3{
+
+font-size: 30px;
+margin: 0 0 30px 0;
+padding: 40px 25px;
+color: #fff;
+text-align: center;
+font-size: 30px;
+}
+
+input{
+margin-bottom: 30px;
+width: 80%;
+margin: auto;
+
+}
+input[type=search]{
+outline: none;
+border: 2px #fff solid;
+background: transparent;
+border-radius: 20px;
+box-sizing: border-box;
+color: #fff;
+font-size: 16px;
+padding: 10px;
+text-align: center;
+border-radius: 20px;
+background: none;
+margin: 0 35px 40px;
+}
+::placeholder{
+color: #fff;
+text-align: center;
+font-weight: bold;
+}
+input[type=submit] {
+height: 45px;
+color: #c5872a;
+background-color: #fff;
+border-radius: 20px;
+cursor: pointer;
+width: 80%;
+font-size: 18px;
+border: 2px #fff solid;
+margin: 0 35px 40px;
+}
+
+input[type=submit]:hover{
+color: #fff;
+background-color: #6fafb8;
+box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
+}
+#contact{
+    color: white;
+}
+.about{
+    color: white;
+}
+@media(min-width : 747px){
+    body{
+        background-color: #c5872a;
+    }
+    h2{
+        text-align: center;
+        font-weight: bold;
+        font-size: 35px;
+        height: 100px;
+        line-height: 100px;
+        color: #c5872a;
+        background: #eff2f1;
+    
+    }
+
+    .paragraphSearch p{
+        background-color: #eff2f1;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 0.15em;
+        font-weight: bolder;
+        color: #c5872a;
+        padding: 20px;
+    }
+    form{
+        width: 550px;
+        margin: auto ;
+       
+
+    }
+  .formSearch{
+    display: grid;
+    justify-content: center;
+  }
+
+}
+@media(max-width:320px){
+    body{
+        width: 64.5vh;
+
+    }
+}

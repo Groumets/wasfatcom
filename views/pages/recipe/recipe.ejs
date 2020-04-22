@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../layout/head')%>
+  <link rel="stylesheet" href="../../../public/recipe/base.css">
+  <title><%=dish.title%></title>
+</head>
+
+<body>
+  <%- include('../../layout/header')%>
+
+  <main>
+    <article>
+      <div class="first" data-aos="fade-right">
+        <img src="<%=dish.imgurl%>" alt="<%=dish.title%>" srcset="">
+        <h4><%=dish.title%></h4>
+      </div>
+
+
+      <div id="ing" data-aos="zoom-in">
+
+        <div id="ingHeader">
+          <h3>IngredientLines: </h3>
+          <!-- <h4>Total time : <%=dish.totalTime%> </h4> -->
+        </div>
+
+        <section id="sectionHide"  >
+          <ol>
+            <%var b =dish.ingredientLines||dish.ingredientlines%>
+            <%b.forEach(ele=>{%>
+            <li><%=ele%></li>
+            <%})  %>
+            </ol>
+        </section>
+        <form id="selectForm" action="/update/<%=id%>" method="POST">
+          <fieldset>
+            <textarea name="ingredientlines" placeholder="ingreadiant detials" cols="50" row="60">
+                    <%=dish.ingredientlines%>
+                    
+                  </textarea>
+            <button type="submit">Up Date</button>
+          </fieldset>
+        </form>
+      </div>
+      
+
+      <div class="all">
+        <h6> Nutrition Fact: </h6>
+        <div id="nut">
+
+          <!-- <p> <%=dish.dietLabels%></p> -->
+          <p>Calories: <br> <%=Number(dish.calories).toFixed(1)%> kcal</p>
+          <p>Carbs: <br><%=Number(dish.totalnutrients.CHOCDF.quantity).toFixed(1)%> g</p>
+          <p>FAT: <br><%=Number(dish.totalnutrients.FAT.quantity).toFixed(1)%> g</p>
+          <p>Protein: <br><%=Number(dish.totalnutrients.PROCNT.quantity).toFixed(1)%> g</p>
+        </div>
+
+      </div>
+
+
+      <div id="button">
+        <form action="/delete/<%=id%>" method="post">
+          <button>DELETE</button>
+        </form>
+      
+          <button id="selectBtn">update</button>
+      
+      </div>
+
+
+    </article>
+
+    <!-- here the edit form -->
+
+    <article>
+      <!-- <img src="<%=dish.imgurl%>" alt="<%=dish.title%>" srcset="">
+            <h4><%=dish.title%></h4>
+            <div id="ing">
+            <div id="ingHeader">
+            <p>IngredientLines: </p> 
+            <p>Total time : <%=dish.totalTime%> </p>
+            </div> -->
+
+
+      <!-- <div id="nut">
+                <p>Nutrition Fact: <br> <%=dish.dietLabels%></p>
+                <p>Calories: <br> <%=Number(dish.calories).toFixed(1)%> kcal</p>
+                <p>Carbs: <br><%=Number(dish.totalnutrients.CHOCDF.quantity).toFixed(1)%> g</p>
+                <p>FAT: <br><%=Number(dish.totalnutrients.FAT.quantity).toFixed(1)%> g</p>
+                <p>Protein: <br><%=Number(dish.totalnutrients.PROCNT.quantity).toFixed(1)%> g</p>
+            </div> -->
+
+      <!-- <div id="button">
+              <form action="/update/<%=id%>?_method=update" method="post">
+                <button>update</button>
+              </form> -->
+      </div>
+
+
+    </article>
+  </main>
+  <footer>
+    <%- include('../../layout/footer')%>
+  </footer>
+  <%- include('../../layout/javascript')%>
+</body>
+
+</html>

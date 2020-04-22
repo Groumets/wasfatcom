@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./layout/head')%>
+    <link rel="stylesheet" href="/public/searchStyle/base.css">
+
+
+    <title>Search</title>
+</head>
+
+<body>
+    <header>
+        <%- include('./layout/header')%>
+    </header>
+    <main>
+        <div id="slider">
+
+            <figure>
+                <img src=" /public/img/foodPic1.jpg">
+                <img src="/public/img/photo-1493770348161-369560ae357d.jpg">
+                <img src="/public/img/ya4.jpg">
+                <img src="/public/img/ya16.jpg">
+                <img src="/public/img/foodPic1.jpg">
+            </figure>
+        </div>
+        <h2>Search Page</h2>
+        <div class="paragraphSearch">
+            <p>
+                Are you hungry?🍔<br>
+                Are you looking for special recipe with special ingredient?🔍<br>
+                Here in our website you can find want are you searching for EASILY.. 🔥<br>
+                just type in the Searching box what ever you WANT
+
+            </p>
+        </div>
+
+        <div class="formSearch">
+            <form action="\search" method="POST" data-aos="flip-right">
+                <label>
+                    <h3> <span id="keyword">What Are You Looking For</span></h3>
+                </label>
+                <input id='searchForRecpie' type="search" name="SearchFor" placeholder="The name of dish ">
+
+
+                <input class="button" type="submit" value="SEARCH">
+            </form>
+        </div>
+
+    </main>
+    <footer>
+        <%- include('./layout/footer')%>
+    </footer>
+    <%- include('./layout/javascript')%>
+</body>
+
+</html>

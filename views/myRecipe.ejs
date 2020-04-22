@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./layout/head')%>
+  <link rel="stylesheet" href="/public/resultcss.css">
+
+  <title>My Recipe</title>
+
+</head>
+
+<body>
+  <header>
+    <%- include('./layout/header')%>
+  </header>
+  <main>
+    <div class="header">
+      <img src="/public/img/form5.jpg">
+ <h2>My Recipes</h2>
+</div>
+  
+    <!-- $('searchForRecpie').val -->
+    <div id="result">
+    <% search.forEach((result,index) => { %>
+    <div class="resultdiv" data-aos="fade-right">
+
+      <div class="resultimg"><img src=<%= result.imgurl %>></div>
+      <div class="h2button">
+        <h2><%= result.title %></h2>
+
+        <!-- <button id="submitButton" type="submit">Add to my list</button> -->
+        <form action="\myRecipe\<%=result.id%>">
+          <label>
+            <input class="button" type="submit" value="View Recipe" id="submitButton">
+        </form>
+      </div>
+    </div>
+    <%  }); %>
+
+  </main>
+
+  <footer>
+    <%- include('./layout/footer')%>
+  </footer>
+  <%- include('./layout/javascript')%>
+</body>
+
+</html>
