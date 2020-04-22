@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/public/style/reset.css">
+    <%- include('./layout/head')%>
+
     <link rel="stylesheet" href="/public/style/base.css">
-    <link rel="stylesheet" href="/public/style/layout.css">
     <title>login</title>
 </head>
-<body>
-    <!-- <header>
 
-    </header> -->
+<body>
     <main>
         <div class="login">
             <h2> Log-in Here</h2>
             <form>
+
                 <input type="text" name="userName" placeholder="Enter Your User name">
                 <input type="text" name="password" placeholder="Enter Your password">
-                <input type="submit" name="login" value="logIn">
+                <input type="submit" name="login" value="logIn" class="submit">
                 <a href="#">Forget password?</a>
-                <p>______________OR____________</p>
-                <input type="submit" name="login" value="descover">
+                <p>____________OR___________</p>
+                <input type="submit" name="login" value="descover" class="submit">
 
 
             </form>
         </div>
     </main>
-    <footer>
-        
-    </footer>
+
 </body>
+
 </html>
