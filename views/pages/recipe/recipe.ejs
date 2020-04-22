@@ -3,9 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../public/recipe/base.css">
+    <title><%=dish.title%></title>
 </head>
 <body>
+    <header>
+        <form action="">
+            <button>X</button>
+          </form>
+    </header>
+    <main>
+        <article>
+            <img src="<%=dish.imgurl%>" alt="<%=dish.title%>" srcset="">
+            <h4><%=dish.title%></h4>
+            <div id="ing">
+            <div id="ingHeader">
+            <p>IngredientLines: </p> 
+            <p>Total time : <%=dish.totalTime%> </p>
+            </div>
+            <ul>
+            <%var b =dish.ingredientLines||dish.ingredientlines%>
+            <%b.forEach(ele=>{%>
+               <li><%=ele%></li>
+              <%})  %>
+              </ul>
+            </div>
+            <div id="nut">
+                <p>Nutrition Fact: <br> <%=dish.dietLabels%></p>
+                <p>Calories: <br> <%=Number(dish.calories).toFixed(1)%> kcal</p>
+                <p>Carbs: <br><%=Number(dish.totalnutrients.CHOCDF.quantity).toFixed(1)%> g</p>
+                <p>FAT: <br><%=Number(dish.totalnutrients.FAT.quantity).toFixed(1)%> g</p>
+                <p>Protein: <br><%=Number(dish.totalnutrients.PROCNT.quantity).toFixed(1)%> g</p>
+            </div>
+            
+            <div id="button">
+            <form action="/delete/<%=id%>" method="post">
+                <button>DELETE</button>
+              </form>
+              <form action="/update/<%=id%>?_method=update" method="post">
+                <button>update</button>
+              </form>
+            </div>
+            
+
+          </article>
+
+          <!-- here the edit form -->
+
+          <article>
+            <img src="<%=dish.imgurl%>" alt="<%=dish.title%>" srcset="">
+            <h4><%=dish.title%></h4>
+            <div id="ing">
+            <div id="ingHeader">
+            <p>IngredientLines: </p> 
+            <p>Total time : <%=dish.totalTime%> </p>
+            </div>
+            <form action="/update/<%=id%>" method="POST">
+              <fieldset>
+                <textarea
+                name="ingredientlines"
+                placeholder="ingreadiant detials"
+                cols="50"
+                row="60"
+              >
+                        <%=dish.ingredientlines%>
+                        
+                      </textarea>
+                <button type="submit">Up Date</button>
+              </fieldset>
+               </form>
+
+               <div id="nut">
+                <p>Nutrition Fact: <br> <%=dish.dietLabels%></p>
+                <p>Calories: <br> <%=Number(dish.calories).toFixed(1)%> kcal</p>
+                <p>Carbs: <br><%=Number(dish.totalnutrients.CHOCDF.quantity).toFixed(1)%> g</p>
+                <p>FAT: <br><%=Number(dish.totalnutrients.FAT.quantity).toFixed(1)%> g</p>
+                <p>Protein: <br><%=Number(dish.totalnutrients.PROCNT.quantity).toFixed(1)%> g</p>
+            </div>
+            
+            <!-- <div id="button">
+              <form action="/update/<%=id%>?_method=update" method="post">
+                <button>update</button>
+              </form> -->
+            </div>
+            
+
+          </article>
+    </main>
     
 </body>
 </html>

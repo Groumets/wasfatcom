@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./resultcss.css">
+   
+    <title>Document</title>
+
+</head>
+<body>
+    
+   <main>
+       <div class="header">
+    <h1>Search Results</h1>
+</div>
+    <!-- $('searchForRecpie').val -->
+
+       <% search.forEach((result,index) => { %>
+        <div id="resultdiv"  data-aos="fade-right"  >
+
+           <div class="resultimg"><img src=<%= result.imgurl %>></div>
+           <div class="h2button">
+            <h2>Title:<%= result.title %></h2>
+           
+            <!-- <button id="submitButton" type="submit">Add to my list</button> -->
+            <form action="\recipe\<%=index%>" method="POST"  >
+              <label >
+         <input class="button" type="submit" value="Add to my list" id="submitButton">
+         </form>
+        </div>
+        </div>
+    <%  }); %>
+
+</main> 
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
+</body>
+
+</html>
