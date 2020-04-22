@@ -177,9 +177,13 @@ box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
     form{
         width: 550px;
         margin: auto ;
+       
 
     }
-  
+  .formSearch{
+    display: grid;
+    justify-content: center;
+  }
 
 }
 @media(max-width:320px){

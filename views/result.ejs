@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
+    <%- include('./layout/head')%>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="./resultcss.css">
+    <link rel="stylesheet" href="/public/resultcss.css">
    
     <title>Document</title>
 
 </head>
 <body>
-    
+    <header>
+      <%- include('./layout/header')%>
+    </header>
    <main>
        <div class="header">
-    <h1>Search Results</h1>
+         <img src="/public/img/form5.jpg">
+    <h2>Search Results</h2>
 </div>
     <!-- $('searchForRecpie').val -->
-
+        <div id="result">
        <% search.forEach((result,index) => { %>
-        <div id="resultdiv"  data-aos="fade-right"  >
+        <div class="resultdiv"  data-aos="fade-right"  >
 
            <div class="resultimg"><img src=<%= result.imgurl %>></div>
            <div class="h2button">
-            <h2>Title:<%= result.title %></h2>
+            <h2><%= result.title %></h2>
            
             <!-- <button id="submitButton" type="submit">Add to my list</button> -->
             <form action="\recipe\<%=index%>" method="POST"  >
@@ -34,13 +37,14 @@
         </div>
         </div>
     <%  }); %>
+  </div>
 
 </main> 
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-      </script>
+<footer>
+  <%- include('./layout/footer')%>
+</footer>
+<%- include('./layout/javascript')%>
 
 </body>
 

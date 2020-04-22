@@ -8,15 +8,17 @@
 </head>
 
 <body>
-    <header>
+  
         <%- include('./layout/header')%>
-    </header>
     <main>
+        <img src="/public/img/form11.jpg" class="mainImg">
         <h2> Here Is Your Result : </h2>
 
 
         <div id="popup">
-            <section class="render">
+            <section class="render"  data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000">
                 <p>Your status is : <%=obj.status%></p>
                 <p> Your Result = <%=obj.result%></p>
                 <p> And here is the ideal weight :</p>
