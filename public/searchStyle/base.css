@@ -80,6 +80,9 @@ margin: auto;
 /* width: auto; */
 padding: 80px 40px;
 background-color: #eff2f1;
+ display: grid;
+    justify-content: center;
+
 }
 form{
 background: none;
