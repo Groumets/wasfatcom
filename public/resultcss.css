@@ -96,4 +96,11 @@ h2 {
     .header h2{
     top: -185px;
 }
+
+}
+@media(max-width:320px){
+    footer{
+        width: auto;
+        height: auto;
+    }
 }
