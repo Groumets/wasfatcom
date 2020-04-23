@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap');
+
 body{
     width: 100%;
 }
@@ -33,6 +36,7 @@ box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.9);
 
  
 h2 {
+    font-family: 'Righteous', cursive;
     width: 100%;
     text-align: center;
     color: white;
@@ -69,6 +73,7 @@ input[type=submit] {
     font-size: 18px;
     height: 45px;
     color: #c5872a;
+    font-family: 'Raleway', sans-serif;
 }
 
 input[type=submit]:hover{

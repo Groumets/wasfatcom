@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap');
+
 html{
     height: 100%;
     overflow: hidden;
@@ -23,6 +26,8 @@ body{
 }
 .header h2{
     margin-top: -100px;
+    font-family: 'Righteous', cursive;
+    
 }
 .header , .header:before{
     background: 50% 50% / cover;
@@ -49,6 +54,7 @@ body{
     margin: 0;
     padding: 10px;
     font-size: 30px;
+    font-family: 'Raleway', sans-serif;
 }
 .paragraph{
     background-color: #efeee9;
@@ -63,6 +69,7 @@ body{
         letter-spacing: 0.2em;
         color: #d98f26;
         padding: 100px;
+        font-family: 'Raleway', sans-serif;
 }
 .form{
     margin: auto;
@@ -85,6 +92,7 @@ h3{
     color: #fff;
     text-align: center;
     font-size: 30px;
+    font-family: 'Righteous', cursive;
 }
 input{
     margin-bottom: 30px;
@@ -119,6 +127,7 @@ input[type=submit] {
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
+    font-family: 'Righteous', cursive;
     font-size: 18px;
 }
 
