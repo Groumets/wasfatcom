@@ -127,7 +127,7 @@ color: #fff;
 text-align: center;
 font-weight: bold;
 }
-input[type=submit] {
+.button1 {
 height: 45px;
 color: #c5872a;
 background-color: #fff;
@@ -139,7 +139,7 @@ border: 2px #fff solid;
 margin: 0 35px 40px;
 }
 
-input[type=submit]:hover{
+.button1:hover{
 color: #fff;
 background-color: #6fafb8;
 box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;

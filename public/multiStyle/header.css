@@ -8,7 +8,7 @@ nav{
     background-color: #c5872a;}
 header nav img{
      height: 50px;
-     float: right;
+     /* float: right; */
      color: white;
      font-size: 35px;
      margin-top: 3px;
@@ -50,7 +50,6 @@ nav ul li a{
 }
 .active{
     display: block;
-    text-align: center;
 }
 
 @media(max-width : 747px){
@@ -60,7 +59,7 @@ header{
 
 header nav img{
      height: 50px;
-     float: right;
+     /* float: right; */
      color: white;
      font-size: 35px;
      margin-top: 3px;
@@ -69,7 +68,12 @@ header nav img{
      display: block;
      height: auto;
      background-color:#c5872a;
-
+     text-align: end;
+}
+header nav{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ 
 }
 nav ul{
      display: none;
@@ -86,8 +90,10 @@ nav ul li{
 .active{
      display: block;
      background-color:#c5872a;
-     text-align: center;
-
+     grid-column-start: 1;
+     grid-column-end: 3;
+     grid-row-start: 2;
+     grid-row-end: 3;
 }
 
 }

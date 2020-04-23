@@ -61,7 +61,7 @@ h2 {
     margin: 10px;
     border-radius: 50px;
 }
-input[type=submit] {
+.button1{
     background-color: #fffefd;
     border-radius: 8px;
     cursor: pointer;
@@ -71,7 +71,7 @@ input[type=submit] {
     color: #c5872a;
 }
 
-input[type=submit]:hover{
+.button1:hover{
     color: #fff;
     background-color: #6fafb8;
     box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
@@ -87,4 +87,13 @@ input[type=submit]:hover{
         width: 64.5vh;
 
     }
+}
+
+@media (max-width:375px){
+    .header{
+        height: 300px;
+    }
+    .header h2{
+    top: -185px;
+}
 }
