@@ -3,7 +3,7 @@ footer{
   height: 270px;
   background-color: #c5872a;
   /* position: absolute; */
-  /* margin-top: 25%; */
+
 }
 .icons {
   display: flex;
@@ -12,6 +12,7 @@ footer{
   transform:translate(-50%,-50%);
   width: auto;
   margin-left: 55%;
+
   margin-top: 8%;
 }
 
@@ -114,12 +115,15 @@ content:'\f1cb';
 #contact1{
   font-size: 30px;
   padding: 15px;
+
   color: azure;
 }
 .flex{
     display: flex;
     color: azure;
+
 }
+
 .about{
   width: 50%;
   height: 55%;
@@ -135,6 +139,9 @@ content:'\f1cb';
 .about p{
   line-height: 1.5em;
   color: azure;
+}
+.about p{
+  line-height: 1.5em;
 }
 
 

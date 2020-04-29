@@ -74,13 +74,19 @@ color: #c5872a;
 padding: 35px;
 
 }
-
+form.aos-init.aos-animate {
+    display: grid;
+    justify-content: center;
+}
 
 .formSearch{
 margin: auto;
 /* width: auto; */
 padding: 80px 40px;
 background-color: #eff2f1;
+ display: grid;
+    justify-content: center;
+
 }
 form{
 background: none;
@@ -104,6 +110,7 @@ color: #fff;
 text-align: center;
 font-size: 30px;
 }
+
 
 input{
 margin-bottom: 30px;
