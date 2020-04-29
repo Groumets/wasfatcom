@@ -1,4 +1,5 @@
 html{
+    height: 100%;
     overflow: hidden;
 }
 body{
@@ -8,17 +9,16 @@ body{
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: auto;
-    height: 100%;
-    margin: auto;
+    background-color: #efeee9;
 }
 
 .header{
-box-sizing: border-box;
-padding: 17vw 16vw;
-min-height: 100vh;
-position: relative;
-transform-style: inherit;
+    box-sizing: border-box;
+    padding: 35vw 0 5vw;
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
 }
 .header h2{
 margin-top: -100px;
@@ -33,13 +33,13 @@ background-color: #00000087;
 background: 50% 50% / cover;
 }
 .header::before{
-bottom: 0;
-content: "";
-left: 0;
-position: absolute;
-right: 0;
-top: 0;
-display: block;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
 background-image: url(/public/img/photo-1504754524776-8f4f37790ca0.jpg);
 background-size: cover;
 transform-origin: center center 0;
@@ -48,18 +48,17 @@ z-index: -1;
 min-height: 100vh;
 }
 .header *{
-font-weight: normal;
-letter-spacing: 0.2em;
-text-align: center;
-margin: 0;
-padding: 10px;
-font-size: 30px;
-color: #fff;
+    font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 30px;
 }
 .paraghraph{
 background-color: #c5872a;
 text-align: center;
-height: 576px;
+height: 560px;
 text-align: center;
 padding: 10px;
 
@@ -75,7 +74,7 @@ display: flex;
 }
 .main{
     box-sizing: border-box;
-    padding: 17vw 16vw;
+    padding: 25vw 0vw;
     min-height: 100vh;
     position: relative;
     transform-style: inherit;
@@ -117,7 +116,7 @@ padding: 10px;
 font-size: 30px;
 color: #fff;
 }
-input[type=submit] {
+input[type=button] {
 height: 45px;
 color: #000000;
 background-color: #fffefd;
@@ -127,7 +126,7 @@ width: 45%;
 font-size: 18px;
 }
 
-input[type=submit]:hover{
+input[type=button]:hover{
 color: #fff;
 background-color: #6fafb8;
 box-shadow: 0 0 10px #6fafb8, 0 0 40px #6fafb8, 0 0 80px #6fafb8;
