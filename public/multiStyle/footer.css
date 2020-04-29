@@ -3,7 +3,7 @@ footer{
   height: 270px;
   background-color: #c5872a;
   /* position: absolute; */
-  margin-top: 25%;
+  /* margin-top: 25%; */
 }
 .icons {
   display: flex;
@@ -11,7 +11,7 @@ footer{
   -webkit-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
   width: auto;
-  margin-left: 45%;
+  margin-left: 55%;
   margin-top: 8%;
 }
 
@@ -114,22 +114,27 @@ content:'\f1cb';
 #contact1{
   font-size: 30px;
   padding: 15px;
+  color: azure;
 }
 .flex{
     display: flex;
+    color: azure;
 }
 .about{
   width: 50%;
   height: 55%;
   padding: 10px 30px;
   justify-content: space-around;
+  color: azure;
 }
 .about  h6{
   font-size: 30px;
   padding: 15px;
+  color: azure;
 }
 .about p{
   line-height: 1.5em;
+  color: azure;
 }
 
 

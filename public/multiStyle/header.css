@@ -1,8 +1,10 @@
 
 header{
-    width: 100%;
-    position: fixed;
-    z-index: 9999;
+     height: auto;
+     position: fixed;
+     z-index: 10;
+     background-color: #c5872a;
+     width: 100%;
 }
 nav{
     background-color: #c5872a;}
@@ -24,15 +26,17 @@ header nav img{
     background: none;
     font-size: 35px;   
     background-color:#c5872a;
+    float: right;
 
 }
  nav ul{
      display: none;
      margin-left: 20px;
      background-color:#c5872a;
+     
 }
 nav ul li{
-     display: block;
+     display: grid;
      text-align: center;
      font-size: 20px;
      border: 0;
