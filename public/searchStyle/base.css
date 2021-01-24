@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,300&display=swap');
+
 body{
     background-color: #c5872a;
 }
@@ -14,7 +17,8 @@ h2{
     line-height: 100px;
     color: #c5872a;
     background: #eff2f1;
-
+    font-family: 'Righteous', cursive;
+    
 }
 #slider figure{
 position: relative;
@@ -63,6 +67,8 @@ left: -400%;
     height: auto;
     background-color: #eff2f1;
     margin: auto;
+    font-family: 'Comic Neue', cursive;
+    
 }
 .paragraphSearch p{
 background-color: #eff2f1;
@@ -72,6 +78,8 @@ letter-spacing: 0.15em;
 font-weight: bolder;
 color: #c5872a;
 padding: 35px;
+font-family: 'Raleway', sans-serif;
+
 
 }
 form.aos-init.aos-animate {
@@ -102,13 +110,12 @@ text-align: center;
 
 }
 h3{
-
-font-size: 30px;
 margin: 0 0 30px 0;
 padding: 40px 25px;
 color: #fff;
 text-align: center;
-font-size: 30px;
+font-size: 25px;
+font-family: 'Righteous', cursive;
 }
 
 
@@ -116,7 +123,7 @@ input{
 margin-bottom: 30px;
 width: 80%;
 margin: auto;
-
+font-family: 'Raleway', sans-serif;
 }
 input[type=search]{
 outline: none;
@@ -131,6 +138,7 @@ text-align: center;
 border-radius: 20px;
 background: none;
 margin: 0 35px 40px;
+
 }
 ::placeholder{
 color: #fff;

@@ -24,7 +24,7 @@
     "ejs": "^3.0.2",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "pg": "^8.0.2",
+    "pg": "^8.0.3",
     "superagent": "^5.2.2",
     "unirest": "^0.6.0"
   }

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap');
 
 body{
     background : url(/public/img/form7.jpg);
@@ -31,12 +33,14 @@ h2{
     color: #fff;
     text-align: center;
     font-size: 30px;
+    font-family: 'Changa', sans-serif;
 }
 
 input{
     margin-bottom: 30px;
     width: 100%;
- 
+   font-family: 'Comic Neue', cursive;
+   
 }
 input[type=text] , input[type=password]{
     border: none;
@@ -49,6 +53,7 @@ input[type=text] , input[type=password]{
     font-size: 15px;
     padding: 10px;
     text-align: center;
+    
 }
 ::placeholder{
     color: #fff;
@@ -63,6 +68,8 @@ input[type=submit] {
     cursor: pointer;
     width: 52%;
     font-size: 18px;
+    
+    
 }
 
 input[type=submit]:hover{
@@ -73,6 +80,7 @@ input[type=submit]:hover{
 p{
     color: white;
     padding: 15px;
+    font-family: 'Comic Neue', cursive;
 }
 a{
     color: #f9e79b;
@@ -81,7 +89,7 @@ a{
     display: block;
     margin-top: 11px;
     text-align: center;
-
+    font-family: 'Comic Neue', cursive;
 
 }
 a:hover{
